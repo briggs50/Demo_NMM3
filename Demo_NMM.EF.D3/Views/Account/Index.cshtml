@@ -1,0 +1,21 @@
+﻿@model Demo_NMM.EF.D2.Models.EditUserViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+        <td>@Html.DisplayFor(modelItem => item.LastName)</td>
+        <td>@Html.DisplayFor(modelItem => item.Email)</td>    
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { userName=item.UserName}) |
+        @Html.ActionLink("Details", "Details", new { userName = item.UserName }) |
+        @Html.ActionLink("Delete", "Delete", new { userName = item.UserName }) 
+    </td>
+    </tr>
+}

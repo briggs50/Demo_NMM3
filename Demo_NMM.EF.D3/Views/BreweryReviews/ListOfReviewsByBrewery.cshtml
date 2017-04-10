@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Demo_NMM.EF.D2.Models.BreweryReview>
+
+@{
+    ViewBag.Title = "Brewery Reviews";
+}
+
+<h2>Reviews for @ViewBag.BreweryName</h2>
+
+<table class="table">
+    @foreach (var review in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => review.DateCreated) <br/>
+                @Html.DisplayFor(modelItem => review.Content) <br/>
+            </td>
+        </tr>
+    }
+</table>
+
+
+@Html.ActionLink("Add a Review", "UserCreate", "BreweryReviews", new { BreweryID = ViewBag.BreweryID }, null) <br/>
+
+@Html.ActionLink("Return to brewery list.", "ListBreweries", "Breweries")
