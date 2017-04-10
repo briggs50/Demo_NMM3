@@ -19,7 +19,7 @@
     @Html.ValidationSummary(true)
 
     <p>
-        Role Name: @Html.DropDownList("RoleName", ViewBag.Roles as SelectList)
+        Role Name @Html.DropDownList("RoleName", ViewBag.Roles as SelectList)
     </p>
 
     @Html.Hidden("userName", ViewBag.UserName as string)
